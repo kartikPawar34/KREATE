@@ -2,6 +2,7 @@
   "name": "kreate",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://kartikpawar34.github.io/KREATE/",
   "type": "module",
   "scripts": {
     "dev": "vite",
