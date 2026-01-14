@@ -1,6 +1,5 @@
 import React from 'react';
 
-// HuePage component displays the hue-adjusted image with a download button
 const HuePage = ({ hueImage }) => {
   if (!hueImage) {
     return null;

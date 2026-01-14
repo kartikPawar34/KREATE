@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const Welcome = ({ onGetStarted }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full text-center">
-      <h1 className="hkreate">Kreate</h1> {/* Using the new hkreate class */}
+      <h1 className="hkreate">Kreate</h1> 
 
       <p className="text-lg">
         Step into the world of effortless image transformation with Kreate. Today, you'll discover intuitive tools for background removal, precise cropping, and a suite of artistic filters to bring your visions to life. This is just the beginning; as your creative journey evolves, so too will Kreate, growing with you to unlock even more possibilities for your digital artistry. Let's create something amazing!

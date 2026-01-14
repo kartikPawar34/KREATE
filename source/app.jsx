@@ -1,42 +1,34 @@
 import React, { useState } from 'react';
-import Welcome from './Welcome.jsx'; // Import the new Welcome component
+import Welcome from './Welcome.jsx'; 
 import FeatureSelection from './FeatureSelection.jsx';
 import ImageProcessingWorkflow from './ImageProcessingWorkflow.jsx';
 import FilterSelectionPage from './FilterSelectionPage.jsx';
 
-// Main App component: Manages which feature or filter selection is currently active
 const App = () => {
-  // State to track the currently selected main feature ('none', 'background-removal', 'cropping', 'filters')
-  // Initialize to 'welcome' to show the Welcome component first
+
   const [selectedFeature, setSelectedFeature] = useState('welcome');
-  // State to track the specific filter selected when 'filters' is the main feature
   const [selectedFilter, setSelectedFilter] = useState('none');
 
-  // Function to set the active main feature
   const handleSelectFeature = (feature) => {
     setSelectedFeature(feature);
-    setSelectedFilter('none'); // Reset filter when a new main feature is selected
+    setSelectedFilter('none'); 
   };
 
-  // Function to set the active filter within the 'filters' category
   const handleSelectFilter = (filter) => {
     setSelectedFilter(filter);
   };
 
-  // Function to go back from a specific filter to the filter selection page
   const handleBackToFilters = () => {
     setSelectedFilter('none');
   };
 
-  // Function to go back from any workflow to the main feature selection
   const handleGoBackToFeatures = () => {
     setSelectedFeature('none');
-    setSelectedFilter('none'); // Ensure both are reset
+    setSelectedFilter('none'); 
   };
 
-  // Function to transition from Welcome screen to FeatureSelection
   const handleGetStarted = () => {
-    setSelectedFeature('none'); // 'none' will trigger FeatureSelection
+    setSelectedFeature('none'); 
   };
 
   return (
@@ -54,16 +46,15 @@ const App = () => {
         {selectedFeature === 'welcome' ? (
           <Welcome onGetStarted={handleGetStarted} />
         ) : selectedFeature === 'none' ? (
-          // Show main feature selection cards
           <FeatureSelection onSelectFeature={handleSelectFeature} />
         ) : selectedFeature === 'filters' && selectedFilter === 'none' ? (
-          // Show filter selection page if 'filters' is selected but no specific filter is chosen
+      
           <FilterSelectionPage
             onSelectFilter={handleSelectFilter}
             onGoBack={handleGoBackToFeatures} // Back to main features
           />
         ) : (
-          // Show the image processing workflow for the selected feature or specific filter
+      
           <ImageProcessingWorkflow
             feature={selectedFeature}
             filter={selectedFilter} // Pass the specific filter

@@ -1,117 +1,80 @@
-
 body {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased; 
-  -moz-osx-font-smoothing: grayscale;  /* Smoother font rendering on Firefox */
   display: flex;
-  flex-direction: column;              /* Stack children vertically */
-  min-height: 100vh;                   /* Ensure body takes full viewport height for centering */
-  background-color: #000000;         /* A dark purple from your original gradient */
+  flex-direction: column;
+  background-color: #000000;
+  color:#fff;
 }
 .video-background {
-  position: fixed; /* Use fixed to cover the entire viewport regardless of scrolling */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Cover full viewport width */
-  height: 100vh; /* Cover full viewport height */
-  object-fit: cover; /* Ensures video covers the entire container, cropping as needed */
-  z-index: -1; /* Places the video behind all other content */
-  pointer-events: none; /* Allows clicks/interactions to pass through to elements below */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
 }
-
-#root {
-  min-height: 100vh; /* Minimum height of the viewport */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically within #root */
-  padding: 1rem; /* Padding around the edges for mobile */
-  position: relative; /* Important for placing content above fixed video */
-  z-index: 0; /* Ensure #root is above the video background */
-  width: 100%; /* Ensure #root takes full width */
-}
-
-
-/*
-  Main Content Box Styling (.bg-white.rounded-xl.shadow-2xl):
-  - This is your main white card where the app content resides.
-  - It needs a background color to be visible over the video.
-  - Re-added flex properties to center its internal content.
-*/
 .bg-white.rounded-xl.shadow-2xl {
-
-  padding: 2.5rem; /* Increased padding for better spacing */
-  border-radius: 1rem; /* More pronounced rounded corners */
-  z-index: 10; /* Ensure this content box is clearly above the video */
-  border:1px solid none;
-  margin:auto;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  z-index: 10;
+  border: 1px solid none;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  font-size: larger;
 }
 
-/*
-  Heading and Paragraph Styling:
-  - Consistent text colors and margins for readability.
-*/
 h1 {
-  color: #ffae00; /* Dark gray for headings */
-  margin-bottom: 1.5rem; /* Increased bottom margin */
-  font-size:60%;
+  color: #ffae00;
+  margin-bottom: 1.5rem;
+  font-size:2rem;
   font-family: "Permanent Marker", cursive;
-  font-weight:lighter;
+  font-weight: lighter;
 }
 
-.hkreate{
-  font-size:150px;
+.hkreate {
+  font-size:8rem;
 }
 
-.text-lg{
-text-align: left;
-font-size:30px;
-}
-
-
-p {
-  color: #ffffff; /* Slightly lighter gray for paragraphs */
-  margin-bottom: 2rem; /* Increased bottom margin */
+.text-lg {
+  text-align: left;
+  font-size:1.7rem;
 }
 
 .flex.flex-col.md\:flex-row.justify-center.items-center.gap-8 {
-  flex-wrap: wrap; /* Allows items to wrap to next line on smaller screens */
-  justify-content: center; /* Already present, good */
-  align-items: center; /* Align items along the cross axis (vertically in a row, horizontally in a column) */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex.flex-col.items-center {
-  margin-bottom: 1rem; /* Space between image containers when wrapped */
-  align-items: center; /* Center content within each image container */
+  margin-bottom: 1rem;
+  align-items: center;
 }
 
-/* Custom CSS for image preview container */
-.image-preview-container.image-preview  {
+.image-preview-container.image-preview {
   position: relative;
-  max-width: 55%; /* Approximately A4 width, but smaller for screen */
-  max-height: 35%; /* Approximately A4 height, but smaller for screen */
-  width: 100%; /* Responsive width */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 55%;
+  max-height: 35%;
+  width: 100%;
+  height: auto;
   margin-left: auto;
-  margin-right: auto; /* These auto margins will center it horizontally */
+  margin-right: auto;
   margin-top: 2rem;
-  margin-bottom: 2rem; /* Space below the image */
+  margin-bottom: 2rem;
   cursor: crosshair;
-  border:1px solid rgb(255, 209, 2);/* border-gray-300 */
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-  overflow: hidden; /* Ensures content stays within bounds, especially for rounded corners */
-  display: flex; /* Use flex to center the image within this container */
-  align-items: center; /* Center image vertically within container */
-  justify-content: center; /* Center image horizontally within container */
-  padding:10px;
-  color:white;
+  border: 1px solid rgb(255, 209, 2);
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: white;
 }
 
 img {
@@ -120,25 +83,23 @@ img {
   object-fit: contain;
 }
 
-
-
 button {
-  padding: 0.75rem 1.5rem; /* Consistent padding */
+  padding: 0.75rem 1.5rem;
   font-family: "Montserrat", sans-serif;
-  transition: all 0.3s ease-in-out; /* Smooth transitions for hover/focus */
-  font-size:20px;
+  font-size: 1.5rem;
   border-radius: 5px;
-  width:600px;
-  color:#000;
-  background:goldenrod;
-  border:1px solid #000;
-  transition:ease-in 0.3s;
+  width: 20rem;
+  color: #000;
+  background: goldenrod;
+  border: 1px solid #000;
+  transition: ease-in 0.2s;
 }
-button:hover{
-  transform:translateX(6px);
-  color:goldenrod;
-  background:#000;
-  border:1px solid goldenrod;
+
+button:hover {
+  transform: translatey(-6px);
+  color: goldenrod;
+  background: #000;
+  border: 1px solid goldenrod;
 }
 
 @keyframes spin {
@@ -149,29 +110,31 @@ button:hover{
     transform: rotate(360deg);
   }
 }
+
 .animate-spin {
   animation: spin 1s linear infinite;
 }
 
 input[type="number"],
-input[type="range"] { /* Added range type */
-  border: 1px solid #d1d5db; /* Light gray border */
-  border-radius: 0.375rem; /* Rounded corners */
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow */
-  padding: 0.5rem; /* Padding inside input */
+input[type="range"] {
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
 }
+
 input[type="number"]:focus,
-input[type="range"]:focus { /* Added range type */
-  border-color: #6366f1; /* Indigo border on focus */
-  box-shadow: 0 0 0 1px #6366f1; /* Ring on focus */
-  outline: none; /* Remove default outline */
+input[type="range"]:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 1px #6366f1;
+  outline: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 1.25rem; /* Size of the thumb */
-  height: 1.25rem; /* Size of the thumb */
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 9999px; 
   background: #4f46e5; 
   cursor: pointer;
@@ -190,9 +153,9 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 0.5rem; /* Height of the track *//* Height of the track */
-  background: #e5e7eb; /* Light gray track color */
-  border-radius: 0.25rem; /* Rounded track */
+  height: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 0.25rem;
 }
 
 input[type="range"]::-moz-range-track {
@@ -201,65 +164,71 @@ input[type="range"]::-moz-range-track {
   background: #e5e7eb;
   border-radius: 0.25rem;
 }
+
 .absolute.top-4.left-4 {
   position: absolute;
   top: 1rem;
   left: 1rem;
   border-radius: 12px;
-  color:#ffffff;
-  background:rgba(0, 0, 0, 0.05);
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.05);
 }
+
 a {
   color: inherit;
   text-decoration: none;
-  color:white;
-  padding-right:1%;
-  align-items:left;
+  color: white;
+  padding-right: 1%;
+  align-items: left;
 }
-.Ancher-tag{
-  width:3%;
-  transition:ease-in-out 0.5s;
+
+.Ancher-tag {
+  width: 5%;
+  transition: ease-in-out 0.2s;
   margin-top: 3%;
 }
 
+
 .Ancher-tag:hover {
-  width:4%;
-  transform:translatey(-15px);
+  transform: translateY(-15px);
 }
-.text-4{
+
+.text-4 {
   text-align: center;
-  font-size:100px;
-  font-weight:bolder;
+  font-size: 100px;
+  font-weight: bolder;
   margin-top: -90px;
-  transition:ease 0.3s;
+  transition: ease 0.3s;
 }
-.text-4:hover{
-  transform:translatey(-30px);
-  font-size:110px;
+
+.text-4:hover {
+  transform: translateY(-30px);
+  font-size: 110px;
 }
-.text-sm{
-  font-size:10px; 
+
+.text-sm {
+  font-size: 10px; 
 }
-.bg-blue-600{
-  width:30;
-  height:7%;
+
+.bg-blue-600 {
+  width: 30;
+  height: 7%;
   border-radius: 20px;
-  font-size:20px;
+  font-size: 20px;
 }
-.grid
-{
-  display:flex;
+
+.grid {
+  display: flex;
   gap: 30px;
   justify-content: center;
   flex-wrap: wrap; 
-  
-  
-}.bg-gradient
-{
+}
+
+.bg-gradient {
   width: 30%;
   height: 60vh;
   border-radius: 50px;
-  padding:10px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.103);
   display: flex;
   flex-direction: column;
@@ -267,4 +236,3 @@ a {
   font-family: sans-serif;
   transition: transform 0.3s ease;
 }
-

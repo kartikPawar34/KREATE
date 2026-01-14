@@ -1,6 +1,5 @@
 import React from 'react';
 
-// BgRemPage component displays the processed image with a download button
 const BgRemPage = ({ processedImage }) => {
   if (!processedImage) {
     return null;
@@ -21,7 +20,7 @@ const BgRemPage = ({ processedImage }) => {
       <img
         src={processedImage}
         alt="Processed"
-        className="image-preview" // Using custom CSS class
+        className="image-preview" 
       />
       <button
         onClick={handleDownload}

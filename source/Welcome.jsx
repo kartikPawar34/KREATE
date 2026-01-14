@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Welcome component displays the introduction and a "Get Started" button
 const Welcome = ({ onGetStarted }) => {
   return (
     <div className="flex flex-col items-center justify-center h-full text-center">
@@ -27,14 +26,6 @@ const Welcome = ({ onGetStarted }) => {
         <a href="#features" ><img src="github.png" className="Ancher-tag" alt="GitHub"/></a>
         <a href="#features" ><img src="gmail.png" className="Ancher-tag" alt="Gmail"/></a>
       </div>
-
-      <footer>
-        <div className="cards">
-          <image src=""/> <image src=""/> <image src=""/> <br/>
-          <image src=""/> <image src=""/> <image src=""/>
-        </div>
-      </footer>
-
     </div>
   );
 };
